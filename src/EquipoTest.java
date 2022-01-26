@@ -11,7 +11,7 @@ class EquipoTest {
 		Equipo equipo =new Equipo();
 		String nombre= null;
 		equipo.setNombreEquipo(nombre);
-		assertEquals(nombre,equipo.getNombreEquipo());
+		assertEquals(null,equipo.getNombreEquipo());
 	}
 	
 	@Test
@@ -21,7 +21,7 @@ class EquipoTest {
 		Equipo equipo =new Equipo();
 		String nombre= "Ana";
 		equipo.setNombreEquipo(nombre);
-		assertEquals(nombre,equipo.getNombreEquipo());
+		assertEquals(null,equipo.getNombreEquipo());
 	}
 	
 	@Test
@@ -62,7 +62,7 @@ class EquipoTest {
 		Equipo equipo =new Equipo();
 		String nombre= "Ana Maria de la Concepcion";
 		equipo.setNombreEquipo(nombre);
-		assertEquals(nombre,equipo.getNombreEquipo());
+		assertEquals(null,equipo.getNombreEquipo());
 	}
 	
 	@Test
@@ -73,67 +73,69 @@ class EquipoTest {
 		Equipo equipo =new Equipo();
 		String nombre= "@er56#PQ*";
 		equipo.setNombreEquipo(nombre);
-		assertEquals(nombre,equipo.getNombreEquipo());
+		assertEquals(null,equipo.getNombreEquipo());
 	}
 	
 	@Test
 	//Test del campo ranking del Equipo con el valor nulo
 	//Se espera que de error
 	void testSetRankingVacio() {
-		Equipo ranking =new Equipo();
-		int posicion=null;
-		ranking.setRanking(posicion);
-		assertEquals(posicion,ranking.getNombreEquipo());
+		Equipo equipo =new Equipo();
+		Integer posicion= null;
+		equipo.setRanking(posicion);
+		assertNull(equipo.getRanking());
+		//assertEquals(null,(Integer) ranking.getRanking());
 	}
 	
 	@Test
 	//Test del campo ranking del Equipo con un valor por debajo del minimo
 	//Se espera que de error
 	void testSetRankingMenorCero() {
-		Equipo ranking =new Equipo();
+		Equipo equipo =new Equipo();
 		int posicion=-2;
-		ranking.setRanking(posicion);
-		assertEquals(posicion,ranking.getNombreEquipo());
+		equipo.setRanking(posicion);
+		assertEquals(null,(Integer)equipo.getRanking());
+		//assertNull(equipo.getRanking());
 	}
 
 	@Test
 	//Test del campo ranking del Equipo con el valor minimo, 0
 	//Se espera que se acepte
 	void testSetRankingValorMinimo() {
-		Equipo ranking =new Equipo();
+		Equipo equipo =new Equipo();
 		int posicion=0;
-		ranking.setRanking(posicion);
-		assertEquals(posicion,ranking.getNombreEquipo());
+		equipo.setRanking(posicion);
+		assertEquals(posicion,equipo.getRanking());
 	}
 
 	@Test
 	//Test del campo ranking del Equipo con un valor valido
 	//Se espera que se acepte
 	void testSetRankingValido() {
-		Equipo ranking =new Equipo();
+		Equipo equipo =new Equipo();
 		int posicion=4;
-		ranking.setRanking(posicion);
-		assertEquals(posicion,ranking.getNombreEquipo());
+		equipo.setRanking(posicion);
+		assertEquals(posicion,equipo.getRanking());
 	}
 	
 	@Test
 	//Test del campo ranking del Equipo con el valor maximo, 10
 	//Se espera que se acepte
 	void testSetRankingValorMaximo() {
-		Equipo ranking =new Equipo();
+		Equipo equipo =new Equipo();
 		int posicion=10;
-		ranking.setRanking(posicion);
-		assertEquals(posicion,ranking.getNombreEquipo());
+		equipo.setRanking(posicion);
+		assertEquals(posicion,(Integer)equipo.getRanking());
 	}
 	
 	@Test
 	//Test del campo ranking del Equipo con un valor por encima del maximo
 	//Se espera que de error
 	void testSetRankingValorGrande() {
-		Equipo ranking =new Equipo();
+		Equipo equipo =new Equipo();
 		int posicion=27;
-		ranking.setRanking(posicion);
-		assertEquals(posicion,ranking.getNombreEquipo());
+		equipo.setRanking(posicion);
+		assertEquals(null,(Integer)equipo.getRanking());
 	}
 	
 	@Test
@@ -141,10 +143,10 @@ class EquipoTest {
 	//cadena de caracteres, caracteres especiales...
 	//Se espera que de error
 	void testSetRankingInvalido() {
-		Equipo ranking =new Equipo();
-		int posicion= "@#me45P";
-		ranking.setRanking(posicion);
-		assertEquals(posicion,ranking.getNombreEquipo());
+		Equipo equipo =new Equipo();
+		int posicion= #me45P;
+		equipo.setRanking(posicion);
+		assertEquals(null,(Integer)equipo.getRanking());
 	}
 	
 }
