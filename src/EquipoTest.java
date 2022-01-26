@@ -144,9 +144,10 @@ class EquipoTest {
 	//Se espera que de error
 	void testSetRankingInvalido() {
 		Equipo equipo =new Equipo();
-		int posicion= #me45P;
-		equipo.setRanking(posicion);
-		assertEquals(null,(Integer)equipo.getRanking());
+		NumberFormatException thrown = assertThrows(NumberFormatException.class ,()->{
+		int posicion= Integer.parseInt("#me45P");
+		equipo.setRanking(posicion);},"El ranking debe ser un entero");
+		assertNull(thrown.getCause());
 	}
 	
 }
