@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  */
 class JugadorTest {
 	/**
-	 * Guardar jugador con m�s de 4 caracteres
+	 * Guardar jugador con más de 4 caracteres
 	 */
 	@Test
 	void testSetNombreJugadorValido() {
@@ -49,7 +49,7 @@ class JugadorTest {
 		assertEquals(nombreJugador,jugador.getNombreJugador());
 	}
 	/**
-	 * Guardar jugador con m�s de 20 caracteres
+	 * Guardar jugador con más de 20 caracteres
 	 */
 	@Test
 	void testSetNombreJugadorInvalidoMaximoCaracteres() {
@@ -74,16 +74,16 @@ class JugadorTest {
 	@Test
 	void testSetIdiomaValido() {
 		Jugador jugador = new Jugador();
-		String idioma = "espa�ol";
-		jugador.setIdioma("espa�ol");
+		String idioma = "español";
+		jugador.setIdioma("español");
 		assertEquals(idioma, jugador.getIdioma());
 	}
 	//Set idioma con valor no valido
 	@Test
 	void testSetIdiomaInvalido() {
 		Jugador jugador = new Jugador();
-		String idioma = "fr�ces";
-		jugador.setIdioma("fr�nces");
+		String idioma = "fráces";
+		jugador.setIdioma("fránces");
 		assertEquals(null, jugador.getIdioma());
 	}
 	//Set idioma con valor vacio
@@ -110,12 +110,132 @@ class JugadorTest {
 		jugador.setEdad(edad);
 		assertEquals(null, (Integer)jugador.getEdad());
 	}
-	//Set edad vac�a
+	//Set edad vacía
 	@Test
 	void testSetVacia() {
 		Jugador jugador = new Jugador();
 		int edad = 0 ;
 		jugador.setEdad(edad);
 		assertEquals(null, (Integer)jugador.getEdad());
+	}
+	//El jugador tiene la edad mínima para ser junior(válido)
+	@Test
+	void testTipoJugadorJuniorEdadMinima() {
+		Jugador jugador = new Jugador();
+		int edad = 18;
+		jugador.setEdad(edad);
+		String nombre="Romeo";
+		jugador.setNombreJugador(nombre);
+		String idioma="español";
+		jugador.setIdioma(idioma);
+		assertEquals(jugador.tipoJugador(edad, nombre, idioma),"Junior");
+	}
+	//El jugador tiene entre 18 y 25 años(válido)
+	@Test
+	void testTipoJugadorJunior() {
+		Jugador jugador = new Jugador();
+		int edad = 20;
+		jugador.setEdad(edad);
+		String nombre="Romeo";
+		jugador.setNombreJugador(nombre);
+		String idioma="español";
+		jugador.setIdioma(idioma);
+		assertEquals(jugador.tipoJugador(edad, nombre, idioma),"Junior");
+	}
+	//Si el jugador tiene la edad maxima para ser junior(válido)
+		@Test
+		void testTipoJugadorJuniorEdadMaxima() {
+			Jugador jugador = new Jugador();
+			int edad = 25;
+			jugador.setEdad(edad);
+			String nombre="Romeo";
+			jugador.setNombreJugador(nombre);
+			String idioma="español";
+			jugador.setIdioma(idioma);
+			assertEquals(jugador.tipoJugador(edad, nombre, idioma),"Junior");
+		}
+	//Si el jugador tiene entre 25 y 35 años, devuelve tipo Senior(válido)
+	@Test
+	void testTipoJugadorSenior() {
+		Jugador jugador = new Jugador();
+		int edad = 30;
+		jugador.setEdad(edad);
+		String nombre="Romeo";
+		jugador.setNombreJugador(nombre);
+		String idioma="español";
+		jugador.setIdioma(idioma);
+		assertEquals(jugador.tipoJugador(edad, nombre, idioma),"Senior");
+	}
+	//El jugador tiene la edad minima para ser senior
+	@Test
+	void testTipoJugadorSeniorEdadMinima() {
+		Jugador jugador = new Jugador();
+		int edad = 26;
+		jugador.setEdad(edad);
+		String nombre="Romeo";
+		jugador.setNombreJugador(nombre);
+		String idioma="español";
+		jugador.setIdioma(idioma);
+		assertEquals(jugador.tipoJugador(edad, nombre, idioma),"Senior");
+	}
+	//El jugador tiene la edad máxima para ser senior
+	@Test
+	void testTipoJugadorSeniorEdadMaxima() {
+		Jugador jugador = new Jugador();
+		int edad = 35;
+		jugador.setEdad(edad);
+		String nombre="Romeo";
+		jugador.setNombreJugador(nombre);
+		String idioma="español";
+		jugador.setIdioma(idioma);
+		assertEquals(jugador.tipoJugador(edad, nombre, idioma),"Senior");
+	}
+	//Si el jugador tiene más de 35 años, devuelve tipo Master(válido)
+	@Test
+	void testTipoJugadorMaster() {
+		Jugador jugador = new Jugador();
+		int edad = 40;
+		jugador.setEdad(edad);
+		String nombre="Romeo";
+		jugador.setNombreJugador(nombre);
+		String idioma="español";
+		jugador.setIdioma(idioma);
+		assertEquals(jugador.tipoJugador(edad, nombre, idioma),"Master");
+	}
+	//El campo nombre está vacío (inválido)
+	@Test
+	void testTipoJugadorConNombreVacio() {
+		Jugador jugador = new Jugador();
+		int edad = 20;
+		jugador.setEdad(edad);
+		String nombre="";
+		jugador.setNombreJugador(nombre);
+		String idioma="español";
+		jugador.setIdioma(idioma);
+		assertEquals(jugador.tipoJugador(edad, nombre, idioma),null);
+	}
+	//El campo edad está vacío(inválido)
+	@Test
+	void testTipoJugadorConEdadVacia() {
+		Jugador jugador = new Jugador();
+		int edad = 0;
+		jugador.setEdad(edad);
+		String nombre="Romeo";
+		jugador.setNombreJugador(nombre);
+		String idioma="español";
+		jugador.setIdioma(idioma);
+		assertEquals(jugador.tipoJugador(edad, nombre, idioma),null);
+	}
+	//El campo idioma está vacío(inválido)
+	@Test
+	void testTipoJugadorConIdiomaVacio() {
+		Jugador jugador = new Jugador();
+		int edad = 20;
+		jugador.setEdad(edad);
+		String nombre="Romeo";
+		jugador.setNombreJugador(nombre);
+		String idioma="";
+		jugador.setIdioma(idioma);
+		assertEquals(jugador.tipoJugador(edad, nombre, idioma),null);
 	}
 }
