@@ -108,7 +108,7 @@ class JugadorTest {
 		Jugador jugador = new Jugador();
 		int edad = 15;
 		jugador.setEdad(edad);
-		assertEquals(null, (Integer)jugador.getEdad());
+		assertEquals(0, (Integer)jugador.getEdad());
 	}
 	//Set edad vacía
 	@Test
@@ -116,7 +116,7 @@ class JugadorTest {
 		Jugador jugador = new Jugador();
 		int edad = 0 ;
 		jugador.setEdad(edad);
-		assertEquals(null, (Integer)jugador.getEdad());
+		assertEquals(0, (Integer)jugador.getEdad());
 	}
 	//El jugador tiene la edad mínima para ser junior(válido)
 	@Test

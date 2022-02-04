@@ -3,7 +3,7 @@ public class Jugador {
 	private String nombre;
 	private int edad;
 	private String idioma;
-	
+
 	public Jugador () {
 			
 		}
@@ -13,7 +13,11 @@ public class Jugador {
 	}
 
 	public void setEdad(int edad) {
-		this.edad = edad;
+		if (edad<18){
+			this.edad=0;
+		}else{
+			this.edad=edad;
+		}
 	}
 	public void setIdioma(String idioma) {
 		this.idioma= idioma;
