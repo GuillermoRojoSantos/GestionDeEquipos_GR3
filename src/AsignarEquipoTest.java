@@ -5,76 +5,47 @@ import static org.junit.jupiter.api.Assertions.*;
 class AsignarEquipoTest {
 
     @Test
-    void testNombreJugadorDeMenosCaracteres(){
-        //añadimos un nombre de jugador de menos de 4 caracteres
-        //en primer lugar creamos un jugador y un equipo
-        Jugador jugador = new Jugador();
-        Equipo equipo = new Equipo();
-        String nombreJugador = "Mik";
-        jugador.setNombreJugador(nombreJugador);
-        int longitudNombreMinima = 4;
-        int longitudNombreMaxima = 20;
-        assertEquals(longitudNombreMinima, jugador.getNombreJugador().length());
+    void TestEquipoNoExiste(){
+        Equipo equipo= null;
+        assertEquals(null,equipo);
     }
-
+/*Tests de quipo correcto dividido en dos pruebas para el nombre y ranking*/
     @Test
-    void Nombre4y20Caracteres(){
-        //creamos un nuevo jugador y le asignamos un nombre
-        //para esta prueba hemos determinado que el nombre debería ser 9 letras
-        //usamos el setter del jugador para asignar un nombre y el getter para el
-        //assertEquals
-       Jugador jugador = new Jugador();
-       Equipo equipo = new Equipo();
-       String nombreJugador= "Cristiano";
-       jugador.setNombreJugador(nombreJugador);
-        int longitudNombreAdecuada = 9;
-        assertEquals(longitudNombreAdecuada, jugador.getNombreJugador().length());
-    }
-
-    @Test
-    void NombreMas20Caracteres(){
-        //creamos un nuevo jugador y le asignamos un nombre de mas de 20 caracteres
-        //en el assertEquals introducimos la longitud maxima (20) y el getter más el
-        //.length para saber la longitud del nombre
-        Jugador jugador = new Jugador();
+    void TestNombreEquipoCorrecto(){
         Equipo equipo = new Equipo();
-        String nombreJugador= "Bullaunancheathrairaluinn";
-        jugador.setNombreJugador(nombreJugador);
-        int longitudNombreMaxima = 20;
-        assertEquals(longitudNombreMaxima, jugador.getNombreJugador().length());
-    }
-
-    @Test
-    void NombreEquipoMenosCaracteres(){
-        Jugador jugador = new Jugador();
-        Equipo equipo = new Equipo();
-        String nombreEquipo = "asd";
+        String nombreEquipo= "Real Madrid";
         equipo.setNombreEquipo(nombreEquipo);
-        int longitudNombreMinima = 4;
-        int longitudNombreMaxima = 20;
-        assertEquals(longitudNombreMinima, equipo.getNombreEquipo().length());
+        equipo.setRanking(4);
+        assertEquals(nombreEquipo, equipo.getNombreEquipo());
+    }
+    @Test
+    void TestRankingEquipoCorrecto() {
+        Equipo equipo = new Equipo();
+        String nombreEquipo = "Real Madrid";
+        int rankingEquipo=4;
+        equipo.setNombreEquipo(nombreEquipo);
+        equipo.setRanking(rankingEquipo);
+        assertEquals(rankingEquipo,equipo.getRanking());
     }
 
-
     @Test
-    void NombreEquipoEntre4y20Caracteres(){
-        Jugador jugador = new Jugador();
-        Equipo equipo = new Equipo();
-        String nombreEquipo = "tomates";
+    void TestNombreEquipoIncorrecto(){
+        Equipo equipo=new Equipo();
+        String nombreEquipo="Rea";
+        int rankingEquipo=4;
         equipo.setNombreEquipo(nombreEquipo);
-        int longitudNombreAdecuada = 7;
-        assertEquals(longitudNombreAdecuada, equipo.getNombreEquipo().length());
+        equipo.setRanking(rankingEquipo);
+        assertEquals(null,equipo.getNombreEquipo());
     }
 
-
     @Test
-    void NombreEquipoMásCaracteres(){
-        Jugador jugador = new Jugador();
-        Equipo equipo = new Equipo();
-        String nombreEquipo = "supercalifragilisticoespialidoso";
+    void TestRankingEquipoIncorrecto(){
+        Equipo equipo=new Equipo();
+        String nombreEquipo="Real Madrid";
+        int rankingEquipo=52425;
         equipo.setNombreEquipo(nombreEquipo);
-        int longitudNombreMaxima = 20;
-        assertEquals(longitudNombreMaxima, equipo.getNombreEquipo().length());
+        equipo.setRanking(rankingEquipo);
+        assertEquals(0, equipo.getRanking());
     }
 
 }
