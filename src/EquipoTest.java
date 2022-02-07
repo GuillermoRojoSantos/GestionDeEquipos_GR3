@@ -9,7 +9,7 @@ class EquipoTest {
 	//Se espera que de error 
 	void testSetNombreEquipoNombreVacio() {
 		Equipo equipo =new Equipo();
-		String nombre= null;
+		String nombre= "";
 		equipo.setNombreEquipo(nombre);
 		assertEquals(null,equipo.getNombreEquipo());
 	}
@@ -70,7 +70,7 @@ class EquipoTest {
 	//y numeros
 	//Se espera que de error
 	void testSetNombreEquipoNombreInvalido() {
-		Equipo equipo =new Equipo();
+		Equipo equipo = new Equipo();
 		String nombre= "@er56#PQ*";
 		equipo.setNombreEquipo(nombre);
 		assertEquals(null,equipo.getNombreEquipo());
@@ -81,9 +81,9 @@ class EquipoTest {
 	//Se espera que de error
 	void testSetRankingVacio() {
 		Equipo equipo =new Equipo();
-		Integer posicion= null;
+		int posicion= -1;
 		equipo.setRanking(posicion);
-		assertNull(equipo.getRanking());
+		assertEquals(-1,equipo.getRanking());
 		//assertEquals(null,(Integer) ranking.getRanking());
 	}
 	
@@ -94,7 +94,7 @@ class EquipoTest {
 		Equipo equipo =new Equipo();
 		int posicion=-2;
 		equipo.setRanking(posicion);
-		assertEquals(null,(Integer)equipo.getRanking());
+		assertEquals(-1,equipo.getRanking());
 		//assertNull(equipo.getRanking());
 	}
 
@@ -135,7 +135,7 @@ class EquipoTest {
 		Equipo equipo =new Equipo();
 		int posicion=27;
 		equipo.setRanking(posicion);
-		assertEquals(null,(Integer)equipo.getRanking());
+		assertEquals(-1,equipo.getRanking());
 	}
 	
 	@Test
