@@ -221,8 +221,8 @@ class AsignarEquipoTest {
 		assertEquals(rankingValido, equipoGuardado.getRanking());
 	}
 	
-	//Asignar equipo que exista y tenga el campo nombre vacío
-	//El resultado esperado es que sea válido
+	//Asignar equipo que no exista
+	//El resultado esperado es que sea inválido
 	@Test
 	void testSetEquipoInexistente() {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
@@ -241,7 +241,7 @@ class AsignarEquipoTest {
 	}		
 
 	//Asignar equipo que exista y tenga el campo nombre inválido
-	//El resultado esperado es que sea válido
+	//El resultado esperado es que sea inválido
 	@Test
 	void testSetEquipoNombreInvalido() {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
@@ -261,7 +261,7 @@ class AsignarEquipoTest {
 		assertEquals(rankingValido, equipoGuardado.getRanking());
 	}
 	//Asignar equipo que exista y tenga el campo ranking inválido
-	//El resultado esperado es que sea válido
+	//El resultado esperado es que sea inválido
 	@Test
 	void testSetEquipoRankingInvalido() {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
@@ -282,7 +282,7 @@ class AsignarEquipoTest {
 	}		
 	
 	//Asignar equipo que exista y tenga el campo nombre vacío
-	//El resultado esperado es que sea válido
+	//El resultado esperado es que sea inválido
 	@Test
 	void testSetEquipoNombreVacío() {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
@@ -302,7 +302,7 @@ class AsignarEquipoTest {
 	}	
 	
 	//Asignar equipo que exista y tenga el campo ranking vacío
-	//El resultado esperado es que sea válido
+	//El resultado esperado es que sea inválido
 	@Test
 	void testSetEquipoRankingVacío() {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
