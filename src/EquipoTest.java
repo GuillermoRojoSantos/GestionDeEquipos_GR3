@@ -150,4 +150,99 @@ class EquipoTest {
 		assertNull(thrown.getCause());
 	}
 	
+		/////////////////////////////////////////////////////////////////////////////
+	@Test
+	//Test del método categoriaEquipo de la clase Equipo, con una entrada 
+	// en el rango máximo de 10.
+	//Se espera que se acepte y el resultado sea "Primera"
+	void testCategoriaEquipoDiez() {
+		Equipo equipo=new Equipo();
+		int ranking=10;
+		String nombre="Malaga";
+		equipo.setNombreEquipo(nombre);
+		equipo.setRanking(ranking);
+		String categoria =equipo.categoriaEquipo();
+		assertEquals("Primera",categoria);
+	}
+	
+	@Test
+	//Test del método categoriaEquipo de la clase Equipo, con una entrada 
+	// de valor 7.
+	//Se espera que se acepte y el resultado sea "Primera"
+	void testCategoriaEquipoSiete() {
+		Equipo equipo=new Equipo();
+		int ranking=7;
+		String nombre="Malaga";
+		equipo.setNombreEquipo(nombre);
+		equipo.setRanking(ranking);
+		String categoria =equipo.categoriaEquipo();
+		assertEquals("Primera",categoria);
+	}
+	
+	@Test
+	//Test del método categoriaEquipo de la clase Equipo, con una entrada 
+	// de valor 6
+	//Se espera que se acepte y el resultado sea "Segunda"
+	void testCategoriaEquipoSeis() {
+		Equipo equipo=new Equipo();
+		int ranking=6;
+		String nombre="Malaga";
+		equipo.setNombreEquipo(nombre);
+		equipo.setRanking(ranking);
+		String categoria =equipo.categoriaEquipo();
+		assertEquals("Segunda",categoria);
+	}
+	
+	@Test
+	//Test del método categoriaEquipo de la clase Equipo, con una entrada 
+	// de valor 3
+	//Se espera que se acepte y el resultado sea "Segunda"
+	void testCategoriaEquipoTres() {
+		Equipo equipo=new Equipo();
+		int ranking=3;
+		String nombre="Malaga";
+		equipo.setNombreEquipo(nombre);
+		equipo.setRanking(ranking);
+		String categoria =equipo.categoriaEquipo();
+		assertEquals("Segunda",categoria);
+	}
+	
+	@Test
+	//Test del método categoriaEquipo de la clase Equipo, con una entrada 
+	// entre 0 y 2 incluidos
+	//Se espera que se acepte y el resultado sea "Tercera"
+	void testCategoriaEquipoDos() {
+		Equipo equipo=new Equipo();
+		int ranking=2;
+		String nombre="Malaga";
+		equipo.setNombreEquipo(nombre);
+		equipo.setRanking(ranking);
+		String categoria =equipo.categoriaEquipo();
+		assertEquals("Tercera",categoria);
+	}
+	
+	@Test
+	//Test del método categoriaEquipo de la clase Equipo, si el campo
+	//ranking no es valido
+	//Se espera que devuelva null
+	void testCategoriaEquipoCamposRankingNull() {
+		Equipo equipo=new Equipo();
+		int ranking=-1;
+		equipo.setRanking(ranking);
+		String categoria =equipo.categoriaEquipo();
+		assertNull(categoria);
+	}
+	
+	@Test
+	//Test del método categoriaEquipo de la clase Equipo, si el campo
+	//nombre no es valido
+	//Se espera que devuelva null
+	void testCategoriaEquipoCamposNombreNull() {
+		Equipo equipo=new Equipo();
+		String nombre="Isa";
+		equipo.setNombreEquipo(nombre);
+		String categoria =equipo.categoriaEquipo();
+		assertNull(categoria);
+	}
+	
 }
