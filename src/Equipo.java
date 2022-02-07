@@ -29,8 +29,21 @@ public class Equipo {
     public int getRanking() {
         return ranking;
     }
-    public String categoriaEquipo() {
-		String categoria=null;
-		return categoria;
+  public String categoriaEquipo() {
+		if(ranking!=-1 && nombreEquipo!=null) {
+			if(ranking>=7 && ranking<=10) {
+				return "Primera";
+			}
+			else if(ranking>=3 && ranking<=6) {
+				return "Segunda";
+			}
+			else if(ranking>=0 && ranking<=2) {
+				return "Tercera";
+			}
+			else {
+				return null;
+			}
+		}else {
+		return null;}
 	}
 }
