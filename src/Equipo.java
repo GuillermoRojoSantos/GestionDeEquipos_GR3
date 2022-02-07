@@ -6,7 +6,7 @@ public class Equipo {
 	}
 
 	public void setNombreEquipo(String nombreEquipo) {
-		if (nombreEquipo.length() <= 4 && nombreEquipo.length() >= 20) {
+		if (nombreEquipo.length() >= 4 && nombreEquipo.length() <= 20) {
 			this.nombreEquipo = nombreEquipo;
 		} else {
 			this.nombreEquipo = null;
@@ -15,10 +15,10 @@ public class Equipo {
 
 	public void setRanking(int ranking) {
 
-		if (ranking <= 0 && ranking >= 10) {
+		if (ranking >= 0 && ranking <= 10) {
 			this.ranking = ranking;
 		} else {
-			this.ranking = 0;
+			this.ranking = -1;
 		}
 	}
 
@@ -31,3 +31,4 @@ public class Equipo {
 		return ranking;
 
 	}
+}
