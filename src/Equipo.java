@@ -29,4 +29,8 @@ public class Equipo {
     public int getRanking() {
         return ranking;
     }
+    public String categoriaEquipo() {
+		String categoria=null;
+		return categoria;
+	}
 }
