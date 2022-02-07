@@ -11,6 +11,7 @@ public class Equipo {
 		} else {
 			this.nombreEquipo = null;
 		}
+		
 	}
 
 	public void setRanking(int ranking) {
@@ -31,5 +32,4 @@ public class Equipo {
 		return ranking;
 
 	}
-}
 }
