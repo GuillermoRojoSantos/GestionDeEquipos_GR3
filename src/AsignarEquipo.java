@@ -1,27 +1,18 @@
-
 public class AsignarEquipo {
       private Equipo equipo;
       private Jugador jugador;
-
-
-      public AsignarEquipo() {
-
-      }
-
-      public void setEquipo(Equipo equipo) {
-            //code here
-      }
-
-      public void setJugador(Jugador jugador) {
-            //code here
-      }
-
-      public Equipo getEquipo(){
-            return equipo;
-      }
-
-      public Jugador getJugador(){
-            return jugador;
-      }
-
+      
+	public Equipo getEquipo() {
+		return equipo;
+	}
+	public void setEquipo(Equipo equipo) {
+		this.equipo = equipo;
+	}
+	public Jugador getJugador() {
+		return jugador;
+	}
+	public void setJugador(Jugador jugador) {
+		this.jugador = jugador;
+	}
+	
 }
