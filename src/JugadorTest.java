@@ -74,7 +74,7 @@ class JugadorTest {
 	@Test
 	void testSetIdiomaValido() {
 		Jugador jugador = new Jugador();
-		String idioma ="español";
+		String idioma ="Español";
 		jugador.setIdioma(idioma);
 		assertEquals(idioma,jugador.getIdioma());
 	}
