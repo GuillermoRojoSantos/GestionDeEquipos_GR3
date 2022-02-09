@@ -69,6 +69,17 @@ class JugadorTest {
 		assertEquals(null,jugador.getNombreJugador());
 	}
 
+	/**
+	 * Guardar jugador con nombre vacío
+	 */
+	@Test
+	void testSetNombreJugadorVacio(){
+		Jugador jugador = new Jugador();
+		String nombreJugador = "";
+		jugador.setNombreJugador(nombreJugador);
+		assertEquals(null,jugador.getNombreJugador());
+	}
+
 
 	//Set idioma con valor valido
 	@Test
