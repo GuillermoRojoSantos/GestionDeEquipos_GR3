@@ -84,7 +84,6 @@ class EquipoTest {
 		int posicion= -1;
 		equipo.setRanking(posicion);
 		assertEquals(-1,equipo.getRanking());
-		//assertEquals(null,(Integer) ranking.getRanking());
 	}
 	
 	@Test
@@ -95,7 +94,6 @@ class EquipoTest {
 		int posicion=-2;
 		equipo.setRanking(posicion);
 		assertEquals(-1,equipo.getRanking());
-		//assertNull(equipo.getRanking());
 	}
 
 	@Test
