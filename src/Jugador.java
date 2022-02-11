@@ -6,8 +6,7 @@ public class Jugador {
         if (nombre != null) {
             if (nombre.length() >= 4 && nombre.length() <= 20) {
                 for (int i = 0; i < nombre.length(); i++) {
-                    if (nombre.toLowerCase().charAt(i) >= 'a' && nombre.toLowerCase().charAt(i) <= 'z'
-                            || nombre.charAt(i) == ' ') {
+                    if (nombre.charAt(i) >= 'A' && nombre.charAt(i) <= 'Z' || nombre.charAt(i) == ' ') {
                         this.nombre = nombre;
                     } else {
                         this.nombre = null;
