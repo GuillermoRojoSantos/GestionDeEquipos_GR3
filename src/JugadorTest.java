@@ -14,7 +14,7 @@ class JugadorTest {
     @Test
     void testSetNombreJugadorValido() {
         Jugador jugador = new Jugador();
-        String nombreJugador = "Antonio";
+        String nombreJugador = "ANTONIO";
         jugador.setNombreJugador(nombreJugador);
         assertEquals(nombreJugador, jugador.getNombreJugador());
     }
@@ -24,7 +24,7 @@ class JugadorTest {
     @Test
     void testSetNombreJugadorInvalidoMinimoCaracteres() {
         Jugador jugador = new Jugador();
-        String nombreJugador = "Pep";
+        String nombreJugador = "PEP";
         jugador.setNombreJugador(nombreJugador);
         assertEquals(null,jugador.getNombreJugador());
     }
@@ -34,7 +34,7 @@ class JugadorTest {
     @Test
     void testSetNombreJugadorValidoMinimoCaracteres() {
         Jugador jugador = new Jugador();
-        String nombreJugador = "Pepe";
+        String nombreJugador = "PEPE";
         jugador.setNombreJugador(nombreJugador);
         assertEquals(nombreJugador,jugador.getNombreJugador());
     }
@@ -44,7 +44,7 @@ class JugadorTest {
     @Test
     void testSetNombreJugadorValidoMaximoCaracteres() {
         Jugador jugador = new Jugador();
-        String nombreJugador = "PepePepePepePepePepe";
+        String nombreJugador = "PEPEPEPEPEPEPEPEPEPE";
         jugador.setNombreJugador(nombreJugador);
         assertEquals(nombreJugador,jugador.getNombreJugador());
     }
@@ -54,7 +54,7 @@ class JugadorTest {
     @Test
     void testSetNombreJugadorInvalidoMaximoCaracteres() {
         Jugador jugador = new Jugador();
-        String nombreJugador = "PepePepePepePepePepeP";
+        String nombreJugador = "PEPEPEPEPEPEPEPEPEPEP";
         jugador.setNombreJugador(nombreJugador);
         assertEquals(null,jugador.getNombreJugador());
     }
