@@ -4,14 +4,14 @@ public class Equipo {
 
 	public Equipo() {}
 
-	public boolean nombreLenght(String nombreEquipo) {
-		boolean nombreLenght = false;
+	public boolean nombreLength(String nombreEquipo) {
+		boolean nombreLength = false;
 		if (nombreEquipo.length() >= 4 && nombreEquipo.length() <= 20) {
-			nombreLenght = true;
+			nombreLength = true;
 		} else {
-			nombreLenght = false;
+			nombreLength = false;
 		}
-		return nombreLenght;
+		return nombreLength;
 	}
 
 	public boolean rangeRanking(int ranking) {
@@ -62,7 +62,7 @@ public class Equipo {
 
 	public void setNombreEquipo(String nombreEquipo) {
 		if (isLetter(nombreEquipo)) {
-			if (nombreLenght(nombreEquipo)) {
+			if (nombreLength(nombreEquipo)) {
 				if (isUppercase(nombreEquipo)) {
 					if (isNull(nombreEquipo)) {
 						this.nombreEquipo = nombreEquipo;
