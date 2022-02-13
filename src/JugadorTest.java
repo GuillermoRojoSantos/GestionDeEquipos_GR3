@@ -64,7 +64,7 @@ class JugadorTest {
     @Test
     void testSetNombreJugadorInvalidoNulo() {
         Jugador jugador = new Jugador();
-        String nombreJugador = "";
+        String nombreJugador = null;
         jugador.setNombreJugador(nombreJugador);
         assertEquals(null,jugador.getNombreJugador());
     }
