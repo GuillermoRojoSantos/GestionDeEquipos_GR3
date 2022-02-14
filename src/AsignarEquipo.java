@@ -1,44 +1,88 @@
-import java.util.Objects;
-
 public class AsignarEquipo {
-private Equipo equipo;
-private Jugador jugador;
+      private Equipo equipo;
+      private Jugador jugador;
 
-public void setEquipo(Equipo equipo) {
-if (equipo.getNombreEquipo().length() >= 4 && equipo.getNombreEquipo().length() <= 20
-&& equipo.getNombreEquipo() != null) {
-if (equipo.getRanking() >= 0 && equipo.getRanking() <= 10) {
-this.equipo = equipo;
-} else {
-this.equipo = null;
-}
-} else {
-this.equipo = null;
-}
-}
+      public void setEquipo(Equipo equipo) {
+            if (EquipoValido(equipo)) {
+                  if (comprobarCadena(equipo.getNombreEquipo())) {
+                        if (comprobarInt(equipo.getRanking())) {
+                              this.equipo = equipo;
+                        }
+                  }
+            }
+      }
 
-public void setJugador(Jugador jugador) {
-if (jugador.getNombreJugador().length() >= 4 && jugador.getNombreJugador().length() <= 20
-&& jugador.getNombreJugador() != null) {
-if (jugador.getEdad() > 0) {
-if (Objects.equals(jugador.getIdioma(), "Frances") || Objects.equals(jugador.getIdioma(), "Español")
-|| Objects.equals(jugador.getIdioma(), "Aleman")) {
-this.jugador = jugador;
-} else {
-this.jugador = null;
-}
-}
-} else {
-this.jugador = null;
-}
-}
+      public Equipo getEquipo() {
+            return this.equipo;
+      }
 
-public Equipo getEquipo() {
-return equipo;
-}
+      public void setJugador(Jugador jugador) {
+            //Comprobamos si es null
+            if (JugadorValido(jugador)) {
+                  if (comprobarCadena(jugador.getNombreJugador())) {
+                        if (comprobarInt(jugador.getEdad())) {
+                              if (comprobarCadena(jugador.getIdioma())) {
+                                    this.jugador = jugador;
+                              }
+                        }
+                  }
+            }
+      }
 
-public Jugador getJugador() {
-return jugador;
-}
 
+      public Jugador getJugador() {
+            return this.jugador;
+      }
+
+      //Nos devuelve un true si es distinto a nulo.
+      private Boolean JugadorValido(Jugador comprobar) {
+            boolean valido = true;
+
+            if (comprobar == null) {
+                  valido = false;
+            } else {
+                  valido = true;
+            }
+
+            return valido;
+      }
+
+      private boolean EquipoValido(Equipo comprobar) {
+            boolean valido = true;
+
+            if (comprobar == null) {
+                  valido = false;
+            } else {
+                  valido = true;
+            }
+
+            return valido;
+      }
+
+      private boolean comprobarInt(int rank) {
+            boolean hasRanking = true;
+
+            if (rank != 0) {
+                  hasRanking = true;
+            } else {
+                  hasRanking = false;
+            }
+
+            return hasRanking;
+      }
+
+      private boolean comprobarCadena(String name) {
+            boolean nombreCorrecto = true;
+
+            if (name != null) {
+                  if (name.length() > 0) {
+                        nombreCorrecto = true;
+                  } else {
+                        nombreCorrecto = false;
+                  }
+            } else {
+                  nombreCorrecto = false;
+            }
+            return nombreCorrecto;
+      }
 }
