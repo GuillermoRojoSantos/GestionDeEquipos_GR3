@@ -25,9 +25,7 @@ public class Equipo {
 		boolean nombreLength = false;
 		if (nombreEquipo.length() >= 4 && nombreEquipo.length() <= 20) {
 			nombreLength = true;
-		} else {
-			nombreLength = false;
-		}
+		} 
 		return nombreLength;
 	}
 
@@ -55,9 +53,9 @@ public class Equipo {
 	 * @return boolean isNull (true si el nombre no es nulo)
 	 */
 	public boolean isNull(String nombreEquipo) {
-		boolean isNull = true;
-		if (nombreEquipo == null) {
-			isNull = false;
+		boolean isNull = false;
+		if (nombreEquipo != null) {
+			isNull = true;
 		} 
 		return isNull;
 	}
