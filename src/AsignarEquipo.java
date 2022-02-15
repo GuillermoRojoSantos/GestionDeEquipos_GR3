@@ -20,6 +20,7 @@ public class AsignarEquipo {
 				}
 			}
 		}
+		else this.equipo = null;
 	}
 
 	/**
@@ -97,7 +98,7 @@ public class AsignarEquipo {
 	private boolean comprobarInt(int ranking) {
 		boolean hasRanking = true;
 
-		if (ranking != 0) {
+		if (ranking != -1) {
 			hasRanking = true;
 		} else {
 			hasRanking = false;
