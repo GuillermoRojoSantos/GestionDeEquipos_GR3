@@ -197,7 +197,7 @@ class AsignarEquipoTest {
 		asignarEquipo.setEquipo(equipo);
 		
 		Equipo equipoGuardado = asignarEquipo.getEquipo(); 
-		assertNull(equipoGuardado);
+		assertNotNull(equipoGuardado);
 		
 	}
 	
