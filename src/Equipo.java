@@ -55,12 +55,10 @@ public class Equipo {
 	 * @return boolean isNull (true si el nombre no es nulo)
 	 */
 	public boolean isNull(String nombreEquipo) {
-		boolean isNull = false;
-		if (nombreEquipo.contains(null)) {
+		boolean isNull = true;
+		if (nombreEquipo == null) {
 			isNull = false;
-		} else {
-			isNull = true;
-		}
+		} 
 		return isNull;
 	}
 
@@ -74,32 +72,13 @@ public class Equipo {
 		boolean isLetter = false;
 		for (int i = 0; i < nombreEquipo.length(); i++) {
 			if (nombreEquipo.charAt(i) >= 'A' && nombreEquipo.charAt(i) <= 'Z' || nombreEquipo.charAt(i) == ' ') {
-				isLetter = false;
-			} else {
 				isLetter = true;
+			} else {
+				isLetter = false;
 				i = nombreEquipo.length();
 			}
 		}
 		return isLetter;
-	}
-
-	/**
-	 * Método que comprueba si el nombre está guardado en mayúsculas
-	 * 
-	 * @param nombreEquipo del equipo que se quiere guardar
-	 * @return boolean isUpperCase (true si el nombre está guardado en mayúsculas)
-	 */
-	public boolean isUppercase(String nombreEquipo) {
-		boolean isUppercase = false;
-		for (int i = 0; i < nombreEquipo.length(); i++) {
-			if (nombreEquipo.equals(nombreEquipo.toUpperCase())) {
-				isUppercase = true;
-			} else {
-				isUppercase = false;
-				i = nombreEquipo.length();
-			}
-		}
-		return isUppercase;
 	}
 
 	/**
@@ -111,11 +90,10 @@ public class Equipo {
 	public void setNombreEquipo(String nombreEquipo) {
 		if (isLetter(nombreEquipo)) {
 			if (nombreLength(nombreEquipo)) {
-				if (isUppercase(nombreEquipo)) {
 					if (isNull(nombreEquipo)) {
 						this.nombreEquipo = nombreEquipo;
 					}
-				}
+				
 			}
 		} else {
 			this.nombreEquipo = null;
