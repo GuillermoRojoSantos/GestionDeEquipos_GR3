@@ -20,7 +20,6 @@ public class AsignarEquipo {
 				}
 			}
 		}
-		else this.equipo = null;
 	}
 
 	/**
@@ -44,9 +43,7 @@ public class AsignarEquipo {
 					}
 				}
 			}
-		} else {
-			this.jugador = null;
-		}
+		} 
 	}
 
 	/**
@@ -63,13 +60,11 @@ public class AsignarEquipo {
 	 * @return boolean valido (true si jugador no es null)
 	 */
 	private boolean JugadorValido(Jugador jugador) {
-		boolean valido = true;
+		boolean valido = false;
 
-		if (jugador == null) {
-			valido = false;
-		} else {
+		if (jugador != null) {
 			valido = true;
-		}
+		} 
 
 		return valido;
 	}
@@ -80,13 +75,11 @@ public class AsignarEquipo {
 	 * @return boolean valido (true si el equipo no es null)
 	 */
 	private boolean EquipoValido(Equipo equipo) {
-		boolean valido = true;
+		boolean valido = false;
 
-		if (equipo == null) {
-			valido = false;
-		} else {
+		if (equipo != null) {
 			valido = true;
-		}
+		} 
 
 		return valido;
 	}
@@ -113,17 +106,13 @@ public class AsignarEquipo {
 	 * @return boolean nombreCorrecto (devuelve true si el nombre es correcto)
 	 */
 	private boolean comprobarCadena(String name){
-        boolean nombreCorrecto = true;
+        boolean nombreCorrecto = false;
 
         if (name != null){
             if (name.length()>0){
                 nombreCorrecto = true;
-            } else {
-                nombreCorrecto = false;
-            }
-        } else {
-            nombreCorrecto = false;
-        }
+            } 
+        } 
         return nombreCorrecto;
     }
 }
