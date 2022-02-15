@@ -66,13 +66,14 @@ public class Jugador {
 	 * @return String tipoJugador Devuelve el tipo de jugador dependiendo de los parámetros introducidos
 	 */
 	public String tipoJugador(int edad, String nombre, String idioma) {
-		String tipoJugador = "";
-		if (edad != 0 && nombre != null && idioma != null) {
 
-			int edadMinimaJunior = 18;
-			int edadMaximaJunior = 25;
-			int edadMinimaSenior = 26;
-			int edadMaximaSenior = 35;
+		String tipoJugador="";
+		int edadMinimaJunior = 18;
+		int edadMaximaJunior = 25;
+		int edadMinimaSenior = 26;
+		int edadMaximaSenior = 35;
+
+		if (edad != 0 && nombre != null && idioma != null) {
 			if (edad >= edadMinimaJunior && edad <= edadMaximaJunior) {
 
 				tipoJugador = "Junior";
@@ -87,12 +88,9 @@ public class Jugador {
 
 			}
 
+		}else {
+			tipoJugador=null;
 		}
-
-		else {
-			tipoJugador = null;
-		}
-
 		return tipoJugador;
 	}
 
@@ -114,8 +112,6 @@ public class Jugador {
 					}
 				}
 			}
-		} else {
-			nombreFinal = null;
 		}
 		
 		return nombreFinal;
