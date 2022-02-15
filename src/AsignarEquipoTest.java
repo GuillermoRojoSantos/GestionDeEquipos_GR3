@@ -286,7 +286,7 @@ class AsignarEquipoTest {
 		int rankingVacio=-1;
 		
 		equipo.setNombreEquipo(nombreValido);
-				
+		equipo.setRanking(rankingVacio);
 		/*Asignar el equipo creado en asignar equipo*/
 		asignarEquipo.setEquipo(equipo);
 				
